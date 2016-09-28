@@ -37,9 +37,16 @@ function countDistinctWords(tokens) {
   return distinctWords.length;
 }
 
+// this is a naive implementation of text tokenization
+// https://en.wikipedia.org/wiki/Tokenization_(lexical_analysis).
+// the goal is to standardize some of the differences between
+// words in a text by converting all to lowercase, removing punctuation
+// etc., so that, for instance, the "there" in 'high there.' and "high ThErE "
+// would both be converted into the same value ("there")
 function tokenizeText(text) {
   return text.toLowerCase().split(/[ ,!.";:-]+/).sort();
 }
+
 
 function removeReturns(text) {
   return text.replace(/\r?\n|\r/g, "");
