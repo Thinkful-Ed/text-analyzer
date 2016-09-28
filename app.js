@@ -1,7 +1,3 @@
-function add(a, b) {
-  return a + b;
-}
-
 function getAverageWordsPerSentence(text) {
   var numSentences = text.split(/[!.?]+/).filter(Boolean).length;;
   var wordCount = tokenizeText(text).length;
