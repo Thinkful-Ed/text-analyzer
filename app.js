@@ -16,15 +16,18 @@ function getAverageWordLength(tokens) {
 }
 
 function countDistinctWords(tokens) {
-  // one way to solve this problem is by using a Set object (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
-  // as in the commented out lines below. we haven't covered sets in this course, so we implement a different approach
+  // one way to solve this problem is by using a Set object
+  // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
+  // as in the commented out lines below. we haven't covered sets in this
+  // course, so we implement a different approach
+  //
   //   var distinctWords = new Set(tokens);
   //   return distinctWords.size;
 
   // instead of using a set, we'll create an empty array of distinct words.
   // then we'll iterate over our tokens and check to see if the token is already
-  // in distinct words. if it is we do nothing, if it's not we add it to our list
-  // of distinct words
+  // in distinct words. if it is we do nothing, if it's not we add it to our
+  // list of distinct words
   var distinctWords = [];
   for (var i=0; i<tokens.length; i++) {
     if (distinctWords.indexOf(tokens[i]) === -1) {
