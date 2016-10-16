@@ -2,7 +2,7 @@ function getAverageWordsPerSentence(text) {
   // get num sentences by splitting on ending punctuation
   // note that this is a naive approach and doesn't account
   // for things like "Mrs. Smith"
-  var numSentences = text.split(/[!.?]+/).length;;
+  var numSentences = text.split(/[!.?]+/).length;
   var wordCount = tokenizeText(text).length;
   return (wordCount / numSentences).toFixed(2);
 }
@@ -44,7 +44,7 @@ function countDistinctWords(tokens) {
 // etc., so that, for instance, the "there" in 'high there.' and "high ThErE "
 // would both be converted into the same value ("there")
 function tokenizeText(text) {
-  return text.toLowerCase().split(/[ ,!.";:-]+/).sort();
+  return text.toLowerCase().match(/\b[^\s]+\b/g).sort();
 }
 
 
