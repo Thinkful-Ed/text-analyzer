@@ -2,7 +2,7 @@ function getAverageWordsPerSentence(text) {
   // get num sentences by splitting on ending punctuation
   // note that this is a naive approach and doesn't account
   // for things like "Mrs. Smith"
-  var numSentences = text.match(/[.!?]+/g).length;
+  var numSentences = text.match(/[.!?]+/g) ? text.match(/[.!?]+/g).length : 1;
   var wordCount = tokenizeText(text).length;
   return (wordCount / numSentences).toFixed(2);
 }
