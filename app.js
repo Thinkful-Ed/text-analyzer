@@ -4,7 +4,6 @@ function getAverageWordsPerSentence(text) {
   // for things like "Mrs. Smith"
   var numSentences = text.match(/[.!?]+/g).length;
   var wordCount = tokenizeText(text).length;
-  console.log(wordCount);
   return (wordCount / numSentences).toFixed(2);
 }
 
