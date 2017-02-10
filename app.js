@@ -1,12 +1,3 @@
-function getAverageWordsPerSentence(text) {
-  // get num sentences by splitting on ending punctuation
-  // note that this is a naive approach and doesn't account
-  // for things like "Mrs. Smith"
-  var numSentences = text.match(/[.!?]+/g) ? text.match(/[.!?]+/g).length : 1;
-  var wordCount = tokenizeText(text).length;
-  return (wordCount / numSentences).toFixed(2);
-}
-
 function getAverageWordLength(tokens) {
   // join all tokens together to create one big string
   // then divide that total length by the number
@@ -63,7 +54,6 @@ function reportOnText(text) {
   var numDistinctWords = countDistinctWords(tokens);
   var numTotalWords = tokens.length;
   var averageWordLength = getAverageWordLength(tokens);
-  var averageWordsPerSentence = getAverageWordsPerSentence(text);
 
   // take our data and display it in the dom
   var textReport = $('.js-text-report');
@@ -71,8 +61,6 @@ function reportOnText(text) {
   textReport.find('.js-unique-word-count').text(numDistinctWords);
   textReport.find('.js-average-word-length').text(
     averageWordLength + " characters");
-  textReport.find('.js-average-sentence-length').text(
-    averageWordsPerSentence + " words");
   textReport.removeClass('hidden');
 }
 
