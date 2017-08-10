@@ -40,7 +40,7 @@ function tokenizeText(text) {
 
 
 function removeReturns(text) {
-  return text.replace(/\r?\n|\r/g, "");
+  return text.replace(/\r?\n|\r/g, " ");
 }
 
 
